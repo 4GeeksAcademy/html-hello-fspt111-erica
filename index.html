@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Instagram Photo Feed con Bootstrap</title>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-light">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center gap-1" href="#">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+<ul class="navbar-nav align-items-center">
+<li class="nav-item">
+<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#newPostModal">
+<span class="btn btn-success">
+Create a new post
+</span>
+</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="btn btn-secondary dropdown-toggle d-flex align-items-center justify-content-center"
+     href="#" id="settingsDropdown" role="button"
+     data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fas fa-cog text-white"></i>
+  </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Accessibility</a></li>
+      <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+    </ul>
+  </li>
+  
+ </ul>
+</div>
+</div>
+</nav>
+<!-- Navs para cambiar de vista -->
+<div class="container mt-4">
+  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#gridView" type="button" role="tab" aria-controls="gridView" aria-selected="true">
+        <i class="fas fa-th"></i>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="single-tab" data-bs-toggle="tab" data-bs-target="#singleView" type="button" role="tab" aria-controls="singleView" aria-selected="false">
+        <i class="fas fa-square"></i>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-4" id="myTabContent">
+<!-- Post Instagram por defecto -->
+<div class="tab-pane fade show active" id="gridView" role="tabpanel" aria-labelledby="grid-tab">
+<!-- Primera fila-->
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+    <img src="https://i.pinimg.com/736x/92/76/02/9276023d061fab6f8d1f0b72e71b2c78.jpg" class="img-fluid post" alt="Post 1">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/c1/20/77/c1207723922bf12f455cc4ee4259a3a6.jpg" class="img-fluid post" alt="Post 2">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/6e/dc/06/6edc065357b382768f430210f489e48c.jpg" class="img-fluid post" alt="Post 3">
+  </div>
+</div>
+<!-- Segunda fila-->
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/fe/6c/25/fe6c252d9463bb5fed47509c68bd88b7.jpg" class="img-fluid post" alt="Post 4">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/05/1a/c6/051ac626ce187201725a5605731df116.jpg" class="img-fluid post" alt="Post 5">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/3b/eb/21/3beb21531896c874b48739a012c92585.jpg" class="img-fluid post" alt="Post 6">
+  </div>
+</div>
+<!-- Tercera fila-->
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/02/03/51/02035188a9ce9f6020a85602ca6403d6.jpg" class="img-fluid post" alt="Post 7">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/ff/bd/dd/ffbddd37b2ceffe750fc534bfa11429d.jpg" class="img-fluid post" alt="Post 8">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-6 mb-3">
+    <img src="https://i.pinimg.com/736x/12/85/78/1285784471d1e325a5e6c0d07f922158.jpg" class="img-fluid post" alt="Post 9">
+  </div>
+</div>
+</div>
+<!--La otra view de IG -->
+<div class="tab-pane fade" id="singleView" role="tabpanel" aria-labelledby="single-tab">
+  <!-- Post 1 -->
+  <div class="post mb-4 border rounded bg-white">
+    <div class="post-header p-3 border-bottom d-flex justify-content-between">
+      <p class="mb-0 fw-bold">My Crazy dog Spark!</p>
+      <span class="text-muted">26/08</span>
+    </div>
+    <div class="post-img">
+      <img src="https://i.pinimg.com/736x/92/76/02/9276023d061fab6f8d1f0b72e71b2c78.jpg" class="img-fluid w-100" alt="Post 1">
+    </div>
+    <div class="post-body p-3">
+      <p class="mb-1 fw-bold">204 likes</p>
+      <p class="mb-0">This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+  <!-- Post 2 -->
+  <div class="post mb-4 border rounded bg-white">
+    <div class="post-header p-3 border-bottom d-flex justify-content-between">
+      <p class="mb-0 fw-bold">The greatness of Croatia</p>
+      <span class="text-muted">04/09</span>
+    </div>
+    <div class="post-img">
+      <img src="https://i.pinimg.com/736x/4f/9c/4f/4f9c4f46ece433b1ab940e580ef16ec1.jpg" class="img-fluid w-100" alt="Post 2">
+    </div>
+    <div class="post-body p-3">
+      <p class="mb-1 fw-bold">204 likes</p>
+      <p class="mb-0">This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+  <!-- Post 3 -->
+  <div class="post mb-4 border rounded bg-white">
+    <div class="post-header p-3 border-bottom d-flex justify-content-between">
+      <p class="mb-0 fw-bold">Amazing GOAL by Cristiano!</p>
+      <span class="text-muted">06/10</span>
+    </div>
+    <div class="post-img">
+      <img src="https://i.pinimg.com/736x/6e/dc/06/6edc065357b382768f430210f489e48c.jpg" class="img-fluid w-100" alt="Post 3">
+    </div>
+    <div class="post-body p-3">
+      <p class="mb-1 fw-bold">204 likes</p>
+      <p class="mb-0">This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+</div>
+    <!-- Modal Create a new Post -->
+    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newPostModalLabel">Create a new post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="postCaption" class="form-label">Caption</label>
+                  <textarea class="form-control" id="postCaption" rows="3" placeholder="Add the caption of your post here..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex gap-2">
+                      <button type="button" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fas fa-camera text-dark"></i>
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-dark"></i>
+                      </button>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
